@@ -12,19 +12,20 @@ Replace UINavigationController with LVResizableNavigationController.  Then, in a
 
 The code was written in such a way that using LVResizableNavigationController without implementing the LVResizableNavigationBarController protocol will not cause any problems.
 
-// Height for navigation bar -> should be larger than 44.  
-// If not implemented, 44 is assumed.
-. - (CGFloat)resizableNavigationBarControllerNavigationBarHeight;
+```
+// Height for navigation bar -> should be larger than 44.
+// If not implemented, 44 is assumed
+- (CGFloat)resizableNavigationBarControllerNavigationBarHeight;
 
 // Not required in order to change the BarTintColor but
 // necessary if you want to animate color changes between pushes
-. - (UIColor *)resizableNavigationBarControllerNavigationBarTintColor;
+- (UIColor *)resizableNavigationBarControllerNavigationBarTintColor;
 
-// Optionally place a subview in the Navigation Bar.  
-// Frame is determined by Navigation bar to be.
-// {0, 44, screenWidth, resizableNavigationBarControllerNavigationBarHeight - 44}.
-. - (UIView *)resizableNavigationBarControllerSubHeaderView;
-
+// Optionally place a subview in the Navigation Bar.
+// subview frame is determined by Navigation bar:
+// {0, 44, screenWidth, resizableNavigationBarControllerNavigationBarHeight - 44}
+- (UIView *)resizableNavigationBarControllerSubHeaderView;
+```
 ### Limitations
 
 - The code currently assumes a status bar of 20 pts (fixable).

@@ -33,6 +33,5 @@ extern CGFloat const LVAnimationDuration;
 
 - (void)setSubHeaderView:(UIView *)subHeaderView animated:(BOOL)animated push:(BOOL)push;
 - (void)adjustLayout;
-- (void)updateBackgroundView;
 
 @end

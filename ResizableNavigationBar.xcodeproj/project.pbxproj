@@ -1,0 +1,340 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F98E2FD1AB38FE90075AF0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98E2FC1AB38FE90075AF0E /* main.m */; };
+		5F98E3001AB38FE90075AF0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98E2FF1AB38FE90075AF0E /* AppDelegate.m */; };
+		5F98E3031AB38FE90075AF0E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98E3021AB38FE90075AF0E /* DetailViewController.m */; };
+		5F98E3061AB38FE90075AF0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F98E3041AB38FE90075AF0E /* Main.storyboard */; };
+		5F98E3081AB38FE90075AF0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F98E3071AB38FE90075AF0E /* Images.xcassets */; };
+		5F98E30B1AB38FE90075AF0E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F98E3091AB38FE90075AF0E /* LaunchScreen.xib */; };
+		5F98E3271AB390C50075AF0E /* LVResizableNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98E3241AB390C50075AF0E /* LVResizableNavigationBar.m */; };
+		5F98E3281AB390C50075AF0E /* LVResizableNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98E3251AB390C50075AF0E /* LVResizableNavigationController.m */; };
+		5F98E3291AB390C50075AF0E /* LVResizableNavigationAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98E3261AB390C50075AF0E /* LVResizableNavigationAnimation.m */; };
+		5F98E32D1AB3920A0075AF0E /* EntryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98E32C1AB3920A0075AF0E /* EntryTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5F98E2F71AB38FE90075AF0E /* ResizableNavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResizableNavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F98E2FB1AB38FE90075AF0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F98E2FC1AB38FE90075AF0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5F98E2FE1AB38FE90075AF0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5F98E2FF1AB38FE90075AF0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5F98E3011AB38FE90075AF0E /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		5F98E3021AB38FE90075AF0E /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		5F98E3051AB38FE90075AF0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5F98E3071AB38FE90075AF0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5F98E30A1AB38FE90075AF0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5F98E3221AB390C50075AF0E /* LVResizableNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVResizableNavigationBar.h; sourceTree = "<group>"; };
+		5F98E3231AB390C50075AF0E /* LVResizableNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVResizableNavigationController.h; sourceTree = "<group>"; };
+		5F98E3241AB390C50075AF0E /* LVResizableNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVResizableNavigationBar.m; sourceTree = "<group>"; };
+		5F98E3251AB390C50075AF0E /* LVResizableNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVResizableNavigationController.m; sourceTree = "<group>"; };
+		5F98E3261AB390C50075AF0E /* LVResizableNavigationAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVResizableNavigationAnimation.m; sourceTree = "<group>"; };
+		5F98E32A1AB390FC0075AF0E /* LVResizableNavigationAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVResizableNavigationAnimation.h; sourceTree = "<group>"; };
+		5F98E32B1AB3920A0075AF0E /* EntryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryTableViewController.h; sourceTree = "<group>"; };
+		5F98E32C1AB3920A0075AF0E /* EntryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F98E2F41AB38FE90075AF0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F98E2EE1AB38FE90075AF0E = {
+			isa = PBXGroup;
+			children = (
+				5F98E2F91AB38FE90075AF0E /* ResizableNavigationBar */,
+				5F98E2F81AB38FE90075AF0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5F98E2F81AB38FE90075AF0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F98E2F71AB38FE90075AF0E /* ResizableNavigationBar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F98E2F91AB38FE90075AF0E /* ResizableNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				5F98E3211AB3903E0075AF0E /* Example */,
+				5F98E3201AB390340075AF0E /* Classes */,
+				5F98E2FA1AB38FE90075AF0E /* Supporting Files */,
+			);
+			path = ResizableNavigationBar;
+			sourceTree = "<group>";
+		};
+		5F98E2FA1AB38FE90075AF0E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F98E2FB1AB38FE90075AF0E /* Info.plist */,
+				5F98E2FC1AB38FE90075AF0E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F98E3201AB390340075AF0E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5F98E3221AB390C50075AF0E /* LVResizableNavigationBar.h */,
+				5F98E3241AB390C50075AF0E /* LVResizableNavigationBar.m */,
+				5F98E3231AB390C50075AF0E /* LVResizableNavigationController.h */,
+				5F98E3251AB390C50075AF0E /* LVResizableNavigationController.m */,
+				5F98E32A1AB390FC0075AF0E /* LVResizableNavigationAnimation.h */,
+				5F98E3261AB390C50075AF0E /* LVResizableNavigationAnimation.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		5F98E3211AB3903E0075AF0E /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				5F98E2FE1AB38FE90075AF0E /* AppDelegate.h */,
+				5F98E2FF1AB38FE90075AF0E /* AppDelegate.m */,
+				5F98E32B1AB3920A0075AF0E /* EntryTableViewController.h */,
+				5F98E32C1AB3920A0075AF0E /* EntryTableViewController.m */,
+				5F98E3011AB38FE90075AF0E /* DetailViewController.h */,
+				5F98E3021AB38FE90075AF0E /* DetailViewController.m */,
+				5F98E3041AB38FE90075AF0E /* Main.storyboard */,
+				5F98E3071AB38FE90075AF0E /* Images.xcassets */,
+				5F98E3091AB38FE90075AF0E /* LaunchScreen.xib */,
+			);
+			name = Example;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F98E2F61AB38FE90075AF0E /* ResizableNavigationBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F98E31A1AB38FE90075AF0E /* Build configuration list for PBXNativeTarget "ResizableNavigationBar" */;
+			buildPhases = (
+				5F98E2F31AB38FE90075AF0E /* Sources */,
+				5F98E2F41AB38FE90075AF0E /* Frameworks */,
+				5F98E2F51AB38FE90075AF0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ResizableNavigationBar;
+			productName = ResizableNavigationBar;
+			productReference = 5F98E2F71AB38FE90075AF0E /* ResizableNavigationBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F98E2EF1AB38FE90075AF0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Level Money";
+				TargetAttributes = {
+					5F98E2F61AB38FE90075AF0E = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = 5F98E2F21AB38FE90075AF0E /* Build configuration list for PBXProject "ResizableNavigationBar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5F98E2EE1AB38FE90075AF0E;
+			productRefGroup = 5F98E2F81AB38FE90075AF0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F98E2F61AB38FE90075AF0E /* ResizableNavigationBar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F98E2F51AB38FE90075AF0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F98E3061AB38FE90075AF0E /* Main.storyboard in Resources */,
+				5F98E30B1AB38FE90075AF0E /* LaunchScreen.xib in Resources */,
+				5F98E3081AB38FE90075AF0E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F98E2F31AB38FE90075AF0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F98E32D1AB3920A0075AF0E /* EntryTableViewController.m in Sources */,
+				5F98E3031AB38FE90075AF0E /* DetailViewController.m in Sources */,
+				5F98E3281AB390C50075AF0E /* LVResizableNavigationController.m in Sources */,
+				5F98E3291AB390C50075AF0E /* LVResizableNavigationAnimation.m in Sources */,
+				5F98E3271AB390C50075AF0E /* LVResizableNavigationBar.m in Sources */,
+				5F98E3001AB38FE90075AF0E /* AppDelegate.m in Sources */,
+				5F98E2FD1AB38FE90075AF0E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5F98E3041AB38FE90075AF0E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F98E3051AB38FE90075AF0E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5F98E3091AB38FE90075AF0E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F98E30A1AB38FE90075AF0E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F98E3181AB38FE90075AF0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5F98E3191AB38FE90075AF0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5F98E31B1AB38FE90075AF0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ResizableNavigationBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5F98E31C1AB38FE90075AF0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ResizableNavigationBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F98E2F21AB38FE90075AF0E /* Build configuration list for PBXProject "ResizableNavigationBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F98E3181AB38FE90075AF0E /* Debug */,
+				5F98E3191AB38FE90075AF0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F98E31A1AB38FE90075AF0E /* Build configuration list for PBXNativeTarget "ResizableNavigationBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F98E31B1AB38FE90075AF0E /* Debug */,
+				5F98E31C1AB38FE90075AF0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F98E2EF1AB38FE90075AF0E /* Project object */;
+}

@@ -14,7 +14,7 @@
 //      http://www.eclipse.org/legal/epl-v10.html
 //
 //
-//  You may elect to redistribute this code under either of these licenses.
+//  You may elect to redistribute this code under this license.
 //  ========================================================================
 //
 

@@ -14,7 +14,7 @@
 //      http://www.eclipse.org/legal/epl-v10.html
 //
 //
-//  You may elect to redistribute this code under either of these licenses.
+//  You may elect to redistribute this code under this license.
 //  ========================================================================
 //
 
@@ -22,9 +22,11 @@
 
 CGFloat const LVNavigationBarHeight = 44.0;
 CGFloat const LVStatusBarHeight = 20.0;
-CGFloat const LVAnimationDuration = 0.3;
+CGFloat const LVAnimationDuration = 0.25;
 
-@implementation LVResizableNavigationBar
+@implementation LVResizableNavigationBar {
+    CGFloat _lastHeight;
+}
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     
@@ -49,8 +51,8 @@ CGFloat const LVAnimationDuration = 0.3;
     self.translucent = NO;
     self.clipsToBounds = NO;
     [self setBackgroundImage:[UIImage new]
-                       forBarPosition:UIBarPositionAny
-                           barMetrics:UIBarMetricsDefault];
+              forBarPosition:UIBarPositionAny
+                  barMetrics:UIBarMetricsDefault];
     //remove shadow border image since we're relying on the navigationcontroller.view, and the line is a little ugly in flat design
     [self setShadowImage:[UIImage new]];
     self.backgroundColor = [UIColor clearColor];
@@ -64,67 +66,14 @@ CGFloat const LVAnimationDuration = 0.3;
 }
 
 - (void)setExtraHeight:(CGFloat)extraHeight {
+    _lastHeight = _extraHeight;
     _extraHeight = extraHeight;
-}
-
-- (void)setSubHeaderView:(UIView *)subHeaderView {
-    [self setSubHeaderView:subHeaderView animated:NO push:YES];
-}
-
-- (void)setSubHeaderView:(UIView *)subHeaderView animated:(BOOL)animated push:(BOOL)push {
-    if (subHeaderView == _subHeaderView) {
-        return;
-    }
-    [self addSubview:subHeaderView];
-    CGRect bounds = [self bounds];
-    CGRect _subHeaderFrame = _subHeaderView.frame;
-    _subHeaderFrame.origin.y = -(LVNavigationBarHeight);
-    subHeaderView.autoresizingMask &= ~UIViewAutoresizingFlexibleHeight;
-    subHeaderView.frame = CGRectMake(0,
-                                     bounds.origin.y + LVNavigationBarHeight,
-                                     bounds.size.width,
-                                     _extraHeight);
-    subHeaderView.alpha = 0;
-    
-    void(^animateHeader)() = ^{
-        _subHeaderView.frame = _subHeaderFrame;
-        subHeaderView.frame  = CGRectMake(0,
-                                          bounds.origin.y + _extraHeight + LVNavigationBarHeight,
-                                          bounds.size.width,
-                                          _extraHeight);
-        subHeaderView.alpha  = 1;
-        _subHeaderView.alpha = 0;
-    };
-    
-    void (^finished)(BOOL) = ^(BOOL isFinished){
-        _subHeaderView.alpha = 1;
-        [_subHeaderView removeFromSuperview];
-        _subHeaderView = subHeaderView;
-    };
-    if (animated) {
-        [UIView animateWithDuration:LVAnimationDuration animations:animateHeader completion:finished];
-    } else {
-        animateHeader();
-        finished(YES);
-    }
-    
-}
-
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    
-    CGPoint pointForTargetView = [self.subHeaderView convertPoint:point fromView:self];
-    
-    if (CGRectContainsPoint(self.subHeaderView.bounds, pointForTargetView)) {
-        return [self.subHeaderView hitTest:pointForTargetView withEvent:event];
-    }
-    
-    return [super hitTest:point withEvent:event];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     CGRect frame = self.frame;
-    frame.origin.y = LVStatusBarHeight - _extraHeight;
+    frame.origin.y = ([[UIApplication sharedApplication] isStatusBarHidden] ? 0 : LVStatusBarHeight) - _extraHeight;
     self.frame = frame;
     NSArray *classNamesToReposition = @[@"_UINavigationBarBackground"];
     
@@ -142,16 +91,18 @@ CGFloat const LVAnimationDuration = 0.3;
     
 }
 
+- (void)setBarTintColor:(UIColor *)barTintColor {
+    [super setBarTintColor:barTintColor];
+    if (self.colorChanged) {
+        self.colorChanged();
+    }
+}
+
 - (void)adjustLayout {
     [self sizeToFit];
     CGRect frame = [self frame];
-    frame.origin.y = LVStatusBarHeight;
+    frame.origin.y = self.translucent ? 0 : LVStatusBarHeight;
     self.frame = frame;
-    CGRect bounds = [self bounds];
-    _subHeaderView.frame = CGRectMake(0,
-                                      bounds.origin.y + bounds.size.height,
-                                      bounds.size.width,
-                                      _extraHeight);
 }
 
 @end

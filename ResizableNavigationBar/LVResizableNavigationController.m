@@ -14,7 +14,7 @@
 //      http://www.eclipse.org/legal/epl-v10.html
 //
 //
-//  You may elect to redistribute this code under either of these licenses.
+//  You may elect to redistribute this code under this license.
 //  ========================================================================
 //
 
@@ -31,11 +31,11 @@
 
 @implementation LVResizableNavigationController
 
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.animationObject = [LVResizableNavigationAnimation new];
-        self.delegate = self.animationObject;
+        [self initialize];
     }
     return self;
 }
@@ -43,8 +43,7 @@
 - (id)initWithRootViewController:(UIViewController *)rootViewController {
     self = [super initWithNavigationBarClass:[LVResizableNavigationBar class] toolbarClass:nil];
     if (self) {
-        self.animationObject = [LVResizableNavigationAnimation new];
-        self.delegate = self.animationObject;
+        [self initialize];
         self.viewControllers = @[rootViewController];
     }
     return self;
@@ -53,16 +52,26 @@
 - (id)initWithNavigationBarClass:(Class)navigationBarClass toolbarClass:(Class)toolbarClass {
     self = [super initWithNavigationBarClass:navigationBarClass toolbarClass:nil];
     if (self) {
-        self.animationObject = [LVResizableNavigationAnimation new];
-        self.delegate = self.animationObject;
+        [self initialize];
     }
     return self;
 }
 
+- (void)initialize {
+    self.animationObject = [LVResizableNavigationAnimation new];
+    self.delegate = self.animationObject;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.clipsToBounds = YES;
     UIViewController *topViewController = self.topViewController;
     [self.animationObject updateNavigationBarForViewController:topViewController];
+    LVResizableNavigationBar *bar = (id)self.navigationBar;
+    __weak LVResizableNavigationController *weak = self;
+    bar.colorChanged = ^{
+        weak.view.backgroundColor = weak.navigationBar.barTintColor;
+    };
 }
 
 - (void)viewWillAppear:(BOOL)animated {

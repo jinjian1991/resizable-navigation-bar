@@ -14,7 +14,7 @@
 //      http://www.eclipse.org/legal/epl-v10.html
 //
 //
-//  You may elect to redistribute this code under either of these licenses.
+//  You may elect to redistribute this code under this license.
 //  ========================================================================
 //
 
@@ -58,6 +58,14 @@
     
     LVResizableNavigationBar *navBar = (id)toVC.navigationController.navigationBar;
     
+    UIView *originalSubHeaderView = navBar.subHeaderView;
+    UIView *newSubHeaderView;
+    if ([toVC respondsToSelector:@selector(resizableNavigationBarControllerSubHeaderView)]) {
+        id<LVResizableNavigationBarController> resizableVC = (id<LVResizableNavigationBarController>)toVC;
+        newSubHeaderView = [resizableVC resizableNavigationBarControllerSubHeaderView];
+    }
+    navBar.subHeaderView = newSubHeaderView;
+    
     CGFloat toVCNavHeight = LVNavigationBarHeight;
     
     if ([toVC respondsToSelector:@selector(resizableNavigationBarControllerNavigationBarHeight)]) {
@@ -71,16 +79,14 @@
     }
     fromVC.navigationController.view.backgroundColor = navBar.barTintColor;
     
-    
+    CGFloat originalExtraHeight = navBar.extraHeight;
     navBar.extraHeight = toVCNavHeight - LVNavigationBarHeight;
-    [self setSubHeaderForViewController:toVC animated:YES push:self.pushing];
     
     CGRect toVCStartFrame = toVC.view.frame;
     //adjust target view controller to left (pop) or to right (push) of current view controller
     toVCStartFrame.origin.x    = self.pushing ? toVCStartFrame.size.width : -(toVCStartFrame.size.width);
     toVCStartFrame.origin.y    = fromVC.view.frame.origin.y;
     toVCStartFrame.size.height = fromVC.view.frame.size.height;
-    toVC.view.frame            = toVCStartFrame;
     
     //calculate navigation bar frame
     CGRect navFrame      = navBar.frame;
@@ -93,28 +99,52 @@
     toVCEndFrame.origin.y    = toVCNavHeight + LVStatusBarHeight;
     toVCEndFrame.size.height = toVC.navigationController.view.frame.size.height - toVCNavHeight - LVStatusBarHeight;
     
+    if (navBar.translucent) {
+        toVCStartFrame.origin.y    =
+        toVCEndFrame.origin.y      = 0;
+        toVCStartFrame.size.height =
+        toVCEndFrame.size.height   = toVC.navigationController.view.frame.size.height;
+    }
+    
+    toVC.view.frame = toVCStartFrame;
+    
+    CGRect startFrameForNewSubHeader = [self startNavBarSubHeaderFrameForExtraHeight:navBar.extraHeight originalHeight:originalExtraHeight toVC:toVC fromRight:self.pushing];
+    [toVC.navigationController.view addSubview:newSubHeaderView];
+    newSubHeaderView.frame = startFrameForNewSubHeader;
+    
     //current view controller final frame to right (pop) or to left (push)
     CGRect fromVCEndFrame      = fromVC.view.frame;
     fromVCEndFrame.origin.x    = self.pushing ? -(fromVCEndFrame.size.width) : fromVCEndFrame.size.width;
     fromVCEndFrame.origin.y    = toVCEndFrame.origin.y;
     fromVCEndFrame.size.height = toVCEndFrame.size.height;
     
-    NSArray * leftItems  = toVC.navigationItem.leftBarButtonItems;
-    NSArray * rightItems = toVC.navigationItem.rightBarButtonItems;
+    
+
+    
+
+    
+    CGRect endFrameForOldHeader = [self endNavBarSubHeaderFrameForOriginalHeight:originalExtraHeight extraHeight:navBar.extraHeight fromVC:fromVC toLeft:self.pushing];
+    CGRect endFrameForNewSubHeader = [self endNavBarSubHeaderFrameForExtraHeight:navBar.extraHeight toVC:toVC];
+    
+    
+    NSArray * leftItems    = toVC.navigationItem.leftBarButtonItems;
+    NSArray * rightItems   = toVC.navigationItem.rightBarButtonItems;
     NSString * toTitle     = toVC.title;
-    NSString * fromTitle   = fromVC.title;
+    NSString * fromTitle   = fromVC.navigationItem.title;
     toVC.navigationItem.leftBarButtonItems = nil;
     toVC.navigationItem.rightBarButtonItems = nil;
+    toVC.navigationItem.title = nil;
     toVC.title = nil;
-    fromVC.title = nil;
+    fromVC.navigationItem.title = nil;
     
     [UIView animateWithDuration:LVAnimationDuration
                           delay:0.0
-                        options:UIViewAnimationOptionCurveEaseIn
+                        options:UIViewAnimationOptionCurveLinear
                      animations:^{
+                         originalSubHeaderView.frame = endFrameForOldHeader;
+                         newSubHeaderView.frame      = endFrameForNewSubHeader;
                          //adjust colors
                          navBar.barTintColor                              = color;
-                         fromVC.navigationController.view.backgroundColor = color;
                          [navBar sizeToFit];
                          //adjust frames
                          navBar.frame      = navFrame;
@@ -123,6 +153,7 @@
                          
                      } completion:^(BOOL finished) {
                          //cleanup
+                         [originalSubHeaderView removeFromSuperview];
                          [self setExtraHeightForViewController:toVC];
                          toVC.navigationItem.leftBarButtonItems = leftItems;
                          toVC.navigationItem.rightBarButtonItems = rightItems;
@@ -144,13 +175,52 @@
     [navBar sizeToFit];
 }
 
-- (void)setSubHeaderForViewController:(UIViewController *)viewController animated:(BOOL)animated push:(BOOL)push {
+- (UIView *)subHeaderForViewController:(UIViewController *)viewController {
     UIView *subHeaderView;
     if ([viewController respondsToSelector:@selector(resizableNavigationBarControllerSubHeaderView)]) {
         subHeaderView = [viewController performSelector:@selector(resizableNavigationBarControllerSubHeaderView) withObject:nil];
     }
-    LVResizableNavigationBar *navBar = (id)viewController.navigationController.navigationBar;
-    [navBar setSubHeaderView:subHeaderView animated:animated push:push];
+    return subHeaderView;
+}
+
+- (CGRect)endNavBarSubHeaderFrameForExtraHeight:(CGFloat)extraHeight toVC:(UIViewController *)toVC {
+    CGRect toVCFrame = toVC.view.frame;
+    CGRect targetFrame = CGRectZero;
+    targetFrame.origin.x = 0;
+    targetFrame.origin.y = LVNavigationBarHeight + LVStatusBarHeight;
+    targetFrame.size.width = toVCFrame.size.width;
+    targetFrame.size.height = extraHeight;
+    return targetFrame;
+}
+
+- (CGRect)startNavBarSubHeaderFrameForExtraHeight:(CGFloat)extraHeight originalHeight:(CGFloat)originalHeight toVC:(UIViewController *)toVC fromRight:(BOOL)fromRight {
+    CGRect toVCFrame = toVC.view.frame;
+    CGRect targetFrame = CGRectZero;
+    targetFrame.origin.x = fromRight ? toVCFrame.size.width : -(toVCFrame.size.width);
+    targetFrame.origin.y = LVNavigationBarHeight + LVStatusBarHeight - (extraHeight - originalHeight);
+    targetFrame.size.width = toVCFrame.size.width;
+    targetFrame.size.height = extraHeight;
+    return targetFrame;
+}
+
+- (CGRect)endNavBarSubHeaderFrameForOriginalHeight:(CGFloat)originalHeight extraHeight:(CGFloat)extraHeight fromVC:(UIViewController *)fromVC toLeft:(BOOL)toLeft {
+    CGRect fromVCFrame = fromVC.view.frame;
+    CGRect targetFrame = CGRectZero;
+    targetFrame.origin.x = toLeft ? -(fromVCFrame.size.width) : fromVCFrame.size.width;
+    targetFrame.origin.y = LVNavigationBarHeight + LVStatusBarHeight + (extraHeight - originalHeight);
+    targetFrame.size.width = fromVCFrame.size.width;
+    targetFrame.size.height = originalHeight;
+    return targetFrame;
+}
+
+- (CGRect)startNavBarSubHeaderFrameForExtraHeight:(CGFloat)extraHeight fromVC:(UIViewController *)fromVC {
+    CGRect fromVCFrame = fromVC.view.frame;
+    CGRect targetFrame = CGRectZero;
+    targetFrame.origin.x = - (fromVCFrame.size.width);
+    targetFrame.origin.y = LVNavigationBarHeight + LVStatusBarHeight;
+    targetFrame.size.width = fromVCFrame.size.width;
+    targetFrame.size.height = extraHeight;
+    return targetFrame;
 }
 
 - (void)setBarTintColorForViewController:(UIViewController *)viewController {
@@ -160,11 +230,19 @@
 }
 
 - (void)updateNavigationBarForViewController:(UIViewController *)viewController {
-    [self setSubHeaderForViewController:viewController animated:NO push:YES];
-    [self setExtraHeightForViewController:viewController];
-    [self setBarTintColorForViewController:viewController];
     LVResizableNavigationBar *navBar = (id)viewController.navigationController.navigationBar;
+    [self setExtraHeightForViewController:viewController];
     [navBar adjustLayout];
+    
+    CGRect targetFrame = [self endNavBarSubHeaderFrameForExtraHeight:navBar.extraHeight toVC:viewController];
+    UIView *subView = [self subHeaderForViewController:viewController];
+    if (subView) {
+        [viewController.navigationController.view addSubview:subView];
+        subView.frame = targetFrame;
+        navBar.subHeaderView = subView;
+    }
+    [self setBarTintColorForViewController:viewController];
+    
 }
 
 @end

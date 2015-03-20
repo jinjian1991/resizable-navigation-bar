@@ -14,11 +14,13 @@
 //      http://www.eclipse.org/legal/epl-v10.html
 //
 //
-//  You may elect to redistribute this code under either of these licenses.
+//  You may elect to redistribute this code under this license.
 //  ========================================================================
 //
 
 #import <UIKit/UIKit.h>
+
+typedef void(^colorChanged)();
 
 extern CGFloat const LVNavigationBarHeight;
 extern CGFloat const LVStatusBarHeight;
@@ -30,8 +32,8 @@ extern CGFloat const LVAnimationDuration;
 // refer to the LVResizableNavigationController protocol
 @property (nonatomic) CGFloat extraHeight;
 @property (nonatomic) UIView *subHeaderView;
+@property (nonatomic, copy) void (^colorChanged)(void);
 
-- (void)setSubHeaderView:(UIView *)subHeaderView animated:(BOOL)animated push:(BOOL)push;
 - (void)adjustLayout;
 
 @end

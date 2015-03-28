@@ -8,36 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		5F98E2FD1AB38FE90075AF0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98E2FC1AB38FE90075AF0E /* main.m */; };
-		5F98E3001AB38FE90075AF0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98E2FF1AB38FE90075AF0E /* AppDelegate.m */; };
-		5F98E3031AB38FE90075AF0E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98E3021AB38FE90075AF0E /* DetailViewController.m */; };
 		5F98E3061AB38FE90075AF0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F98E3041AB38FE90075AF0E /* Main.storyboard */; };
 		5F98E3081AB38FE90075AF0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F98E3071AB38FE90075AF0E /* Images.xcassets */; };
 		5F98E30B1AB38FE90075AF0E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F98E3091AB38FE90075AF0E /* LaunchScreen.xib */; };
-		5F98E3271AB390C50075AF0E /* LVResizableNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98E3241AB390C50075AF0E /* LVResizableNavigationBar.m */; };
-		5F98E3281AB390C50075AF0E /* LVResizableNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98E3251AB390C50075AF0E /* LVResizableNavigationController.m */; };
-		5F98E3291AB390C50075AF0E /* LVResizableNavigationAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98E3261AB390C50075AF0E /* LVResizableNavigationAnimation.m */; };
-		5F98E32D1AB3920A0075AF0E /* EntryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F98E32C1AB3920A0075AF0E /* EntryTableViewController.m */; };
+		5FFF39231AC72F48000DAFAE /* LVResizableNavigationAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFF391E1AC72F48000DAFAE /* LVResizableNavigationAnimation.m */; };
+		5FFF39241AC72F48000DAFAE /* LVResizableNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFF39201AC72F48000DAFAE /* LVResizableNavigationBar.m */; };
+		5FFF39251AC72F48000DAFAE /* LVResizableNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFF39221AC72F48000DAFAE /* LVResizableNavigationController.m */; };
+		5FFF392C1AC73219000DAFAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFF39271AC73219000DAFAE /* AppDelegate.m */; };
+		5FFF392D1AC73219000DAFAE /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFF39291AC73219000DAFAE /* DetailViewController.m */; };
+		5FFF392E1AC73219000DAFAE /* EntryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFF392B1AC73219000DAFAE /* EntryTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5F98E2F71AB38FE90075AF0E /* ResizableNavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResizableNavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F98E2FB1AB38FE90075AF0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F98E2FC1AB38FE90075AF0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5F98E2FE1AB38FE90075AF0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5F98E2FF1AB38FE90075AF0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5F98E3011AB38FE90075AF0E /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		5F98E3021AB38FE90075AF0E /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		5F98E3051AB38FE90075AF0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F98E3071AB38FE90075AF0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5F98E30A1AB38FE90075AF0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		5F98E3221AB390C50075AF0E /* LVResizableNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVResizableNavigationBar.h; sourceTree = "<group>"; };
-		5F98E3231AB390C50075AF0E /* LVResizableNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVResizableNavigationController.h; sourceTree = "<group>"; };
-		5F98E3241AB390C50075AF0E /* LVResizableNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVResizableNavigationBar.m; sourceTree = "<group>"; };
-		5F98E3251AB390C50075AF0E /* LVResizableNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVResizableNavigationController.m; sourceTree = "<group>"; };
-		5F98E3261AB390C50075AF0E /* LVResizableNavigationAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVResizableNavigationAnimation.m; sourceTree = "<group>"; };
-		5F98E32A1AB390FC0075AF0E /* LVResizableNavigationAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVResizableNavigationAnimation.h; sourceTree = "<group>"; };
-		5F98E32B1AB3920A0075AF0E /* EntryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryTableViewController.h; sourceTree = "<group>"; };
-		5F98E32C1AB3920A0075AF0E /* EntryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryTableViewController.m; sourceTree = "<group>"; };
+		5FFF391D1AC72F48000DAFAE /* LVResizableNavigationAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LVResizableNavigationAnimation.h; path = Classes/LVResizableNavigationAnimation.h; sourceTree = "<group>"; };
+		5FFF391E1AC72F48000DAFAE /* LVResizableNavigationAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LVResizableNavigationAnimation.m; path = Classes/LVResizableNavigationAnimation.m; sourceTree = "<group>"; };
+		5FFF391F1AC72F48000DAFAE /* LVResizableNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LVResizableNavigationBar.h; path = Classes/LVResizableNavigationBar.h; sourceTree = "<group>"; };
+		5FFF39201AC72F48000DAFAE /* LVResizableNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LVResizableNavigationBar.m; path = Classes/LVResizableNavigationBar.m; sourceTree = "<group>"; };
+		5FFF39211AC72F48000DAFAE /* LVResizableNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LVResizableNavigationController.h; path = Classes/LVResizableNavigationController.h; sourceTree = "<group>"; };
+		5FFF39221AC72F48000DAFAE /* LVResizableNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LVResizableNavigationController.m; path = Classes/LVResizableNavigationController.m; sourceTree = "<group>"; };
+		5FFF39261AC73219000DAFAE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Example/AppDelegate.h; sourceTree = "<group>"; };
+		5FFF39271AC73219000DAFAE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Example/AppDelegate.m; sourceTree = "<group>"; };
+		5FFF39281AC73219000DAFAE /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = Example/DetailViewController.h; sourceTree = "<group>"; };
+		5FFF39291AC73219000DAFAE /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = Example/DetailViewController.m; sourceTree = "<group>"; };
+		5FFF392A1AC73219000DAFAE /* EntryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntryTableViewController.h; path = Example/EntryTableViewController.h; sourceTree = "<group>"; };
+		5FFF392B1AC73219000DAFAE /* EntryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntryTableViewController.m; path = Example/EntryTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,12 +89,12 @@
 		5F98E3201AB390340075AF0E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5F98E3221AB390C50075AF0E /* LVResizableNavigationBar.h */,
-				5F98E3241AB390C50075AF0E /* LVResizableNavigationBar.m */,
-				5F98E3231AB390C50075AF0E /* LVResizableNavigationController.h */,
-				5F98E3251AB390C50075AF0E /* LVResizableNavigationController.m */,
-				5F98E32A1AB390FC0075AF0E /* LVResizableNavigationAnimation.h */,
-				5F98E3261AB390C50075AF0E /* LVResizableNavigationAnimation.m */,
+				5FFF391D1AC72F48000DAFAE /* LVResizableNavigationAnimation.h */,
+				5FFF391E1AC72F48000DAFAE /* LVResizableNavigationAnimation.m */,
+				5FFF391F1AC72F48000DAFAE /* LVResizableNavigationBar.h */,
+				5FFF39201AC72F48000DAFAE /* LVResizableNavigationBar.m */,
+				5FFF39211AC72F48000DAFAE /* LVResizableNavigationController.h */,
+				5FFF39221AC72F48000DAFAE /* LVResizableNavigationController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -102,12 +102,12 @@
 		5F98E3211AB3903E0075AF0E /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				5F98E2FE1AB38FE90075AF0E /* AppDelegate.h */,
-				5F98E2FF1AB38FE90075AF0E /* AppDelegate.m */,
-				5F98E32B1AB3920A0075AF0E /* EntryTableViewController.h */,
-				5F98E32C1AB3920A0075AF0E /* EntryTableViewController.m */,
-				5F98E3011AB38FE90075AF0E /* DetailViewController.h */,
-				5F98E3021AB38FE90075AF0E /* DetailViewController.m */,
+				5FFF39261AC73219000DAFAE /* AppDelegate.h */,
+				5FFF39271AC73219000DAFAE /* AppDelegate.m */,
+				5FFF39281AC73219000DAFAE /* DetailViewController.h */,
+				5FFF39291AC73219000DAFAE /* DetailViewController.m */,
+				5FFF392A1AC73219000DAFAE /* EntryTableViewController.h */,
+				5FFF392B1AC73219000DAFAE /* EntryTableViewController.m */,
 				5F98E3041AB38FE90075AF0E /* Main.storyboard */,
 				5F98E3071AB38FE90075AF0E /* Images.xcassets */,
 				5F98E3091AB38FE90075AF0E /* LaunchScreen.xib */,
@@ -185,13 +185,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F98E32D1AB3920A0075AF0E /* EntryTableViewController.m in Sources */,
-				5F98E3031AB38FE90075AF0E /* DetailViewController.m in Sources */,
-				5F98E3281AB390C50075AF0E /* LVResizableNavigationController.m in Sources */,
-				5F98E3291AB390C50075AF0E /* LVResizableNavigationAnimation.m in Sources */,
-				5F98E3271AB390C50075AF0E /* LVResizableNavigationBar.m in Sources */,
-				5F98E3001AB38FE90075AF0E /* AppDelegate.m in Sources */,
+				5FFF392E1AC73219000DAFAE /* EntryTableViewController.m in Sources */,
+				5FFF39241AC72F48000DAFAE /* LVResizableNavigationBar.m in Sources */,
+				5FFF39251AC72F48000DAFAE /* LVResizableNavigationController.m in Sources */,
+				5FFF39231AC72F48000DAFAE /* LVResizableNavigationAnimation.m in Sources */,
 				5F98E2FD1AB38FE90075AF0E /* main.m in Sources */,
+				5FFF392C1AC73219000DAFAE /* AppDelegate.m in Sources */,
+				5FFF392D1AC73219000DAFAE /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

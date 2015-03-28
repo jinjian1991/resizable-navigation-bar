@@ -130,12 +130,17 @@
     NSArray * leftItems    = toVC.navigationItem.leftBarButtonItems;
     NSArray * rightItems   = toVC.navigationItem.rightBarButtonItems;
     NSString * toTitle     = toVC.title;
-    NSString * fromTitle   = fromVC.navigationItem.title;
+    NSString * fromTitle   = fromVC.title;
     toVC.navigationItem.leftBarButtonItems = nil;
     toVC.navigationItem.rightBarButtonItems = nil;
-    toVC.navigationItem.title = nil;
+    
+    NSArray *fromLeftItems = fromVC.navigationItem.leftBarButtonItems;
+    NSArray *fromRightItems = fromVC.navigationItem.rightBarButtonItems;
+    
     toVC.title = nil;
-    fromVC.navigationItem.title = nil;
+    fromVC.title = nil;
+    fromVC.navigationItem.leftBarButtonItems = nil;
+    fromVC.navigationItem.rightBarButtonItems = nil;
     
     [UIView animateWithDuration:LVAnimationDuration
                           delay:0.0
@@ -157,6 +162,8 @@
                          [self setExtraHeightForViewController:toVC];
                          toVC.navigationItem.leftBarButtonItems = leftItems;
                          toVC.navigationItem.rightBarButtonItems = rightItems;
+                         fromVC.navigationItem.leftBarButtonItems = fromLeftItems;
+                         fromVC.navigationItem.rightBarButtonItems = fromRightItems;
                          toVC.title = toTitle;
                          fromVC.title = fromTitle;
                          [transitionContext completeTransition:![transitionContext transitionWasCancelled]];

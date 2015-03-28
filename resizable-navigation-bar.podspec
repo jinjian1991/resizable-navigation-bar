@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "resizable-navigation-bar"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "Resizable UINavigationBar for iOS8"
   s.description      = <<-DESC
                        With the use of a LVResizableNavigationController, view controllers can now set the height of the navigation bar dynamically.
